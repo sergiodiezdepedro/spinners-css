@@ -1,0 +1,66 @@
+$fuente-principal: Roboto,
+sans-serif;
+$color-destacado: coral;
+$color-claro: #fff;
+$color-fondo-spinner: lightgray;
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+%spinner {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    animation: giro .7s linear infinite;
+}
+
+@keyframes giro {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    font-family: $fuente-principal;
+}
+
+.header {
+    padding: 1rem;
+    background-color: $color-destacado;
+    color: $color-claro;
+    text-align: center;
+}
+
+.contenedor {
+    width: 75%;
+    margin: 2rem auto;
+}
+
+.spinner {
+    position: relative;
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.spinner-1 {
+    &::before {
+        @extend %spinner;
+        border: 3px solid $color-fondo-spinner;
+        border-top-color: $color-destacado;
+    }
+}
+
+.spinner-2 {
+    &::before {
+        @extend %spinner;
+        border-top: 2px solid $color-destacado;
+        border-right: 2px solid transparent;
+    }
+}

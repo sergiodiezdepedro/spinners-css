@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Spinners</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>
+            Hola Spinners
+        </h1>
+    </header>
+    <div class="contenedor">
+        <section class="intro">
+            <h2>
+                Uso alternativo de uno otro tipo de spinner. Ambos están en la misma posición. Se incluye un poco de JavaScript para simular el efecto del funcionamiento del spinner antes de la carga de un elemento o recurso desde el servidor.
+            </h2>
+        </section>
+        <section class="spinner">
+            <div class="spinner__container"></div>
+        </section>
+    </div>
+    <script>
+        document.querySelector(".intro").style.display = "none";
+        document.querySelector(".spinner__container").classList.add("spinner-1");
+        // document.querySelector(".spinner__container").classList.add("spinner-2");
+
+        // Simulación de petición a servidor
+        setTimeout(() => {
+            document.querySelector(".spinner__container").classList.remove("spinner-1");
+            // document.querySelector(".spinner__container").classList.remove("spinner-2");
+            document.querySelector(".intro").style.display = "block";
+        }, 3000);
+    </script>
+</body>
+
+</html>
